@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+	<meta charset="utf-8">
+	<style>
+		table, th, td {
+		  border: 1px solid black;
+		  border-collapse:collapse;
+		}
+		th, td {
+	  		padding: 5px;
+		}
+		.evenrow{
+			background-color: blue;
+		}
+		.oddrow{
+			background-color: hotpink;
+		}
+</style>
+<script >
+		window.addEventListener("load", function(){loadXMLDoc();});
+		function loadXMLDoc() {
+		  var xmlhttp = new XMLHttpRequest();
+		  xmlhttp.open("GET", "XMLtask.xml", true);
+		  xmlhttp.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) {getResult(this);}};
+		  xmlhttp.send(null);
+		}
+		function getResult(xmlhttp){
+			var xmlDoc = xmlhttp.responseXML.documentElement;
+			removeWhitespace(xmlDoc);
+	      var outputResult = document.getElementById("tableBody");
+	      var rowData = xmlDoc.getElementsByTagName(
+	      	"CD");
+	      displayResult(rowData, outputResult);
+		}
+		function displayResult(xmlnodes, tablenodes){
+			var table = tablenodes.parentNode;
+			var newRow, newCell, i;
+			console.log("Number of nodes: "+xmlnodes.length);
+			for (i=0; i<xmlnodes.length; i++) {
+				newRow = tablenodes.insertRow(i);
+				newRow.className = (i%2) ? "oddrow":"evenrow";
+				for (var j=0; j<xmlnodes.length; j++) {
+					newCell = newRow.insertCell(newRow.cells.length);
+					if (xmlnodes[i].childNodes[j].firstChild) {
+						newCell.innerHTML = xmlnodes[i].childNodes[j].firstChild.nodeValue;
+					}else{
+						newCell.innerHTML = "-";
+					}
+					console.log("cell: "+newCell);
+				}
+			}
+			table.appendChild(tablenodes);
+		}
+		function removeWhitespace(xml) {
+	            var loopIndex;
+	            for (loopIndex = 0; loopIndex < xml.childNodes.length; loopIndex++) {
+	                var currentNode = xml.childNodes[loopIndex];
+	                if (currentNode.nodeType == 1) {
+	                    removeWhitespace(currentNode);
+	                }
+	                if (!(/\S/.test(currentNode.nodeValue)) && (currentNode.nodeType == 3)) {
+	                    xml.removeChild(xml.childNodes[loopIndex--]);
+	                }
+	            }
+	        }
+</script>
+</head>
+<body>
+<table id="MainTable">
+	<tbody id="tableBody"></tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<catalog>
+	<CD id = "1">
+		<title>Lovely</title>
+		<artist>Billie Eilish and Khalid</artist>
+		<country>USA</country>
+		<genre>Alternative</genre>
+	</CD>
+	<CD id = "2">
+		<title>Smells like teen spirit</title>
+		<artist>Nirvana</artist>
+		<country>USA</country>
+		<genre>Rock</genre>
+	</CD>
+	<CD id = "3">
+		<title>Seventeen</title>
+		<artist>Troye Sivan</artist>
+		<country>USA</country>
+		<genre>Pop</genre>
+	</CD>
+	<CD id = "4">
+		<title>Superfade</title>
+		<artist>Fall Out Boy</artist>
+		<country>USA</country>
+		<genre>Alternative</genre>
+	</CD>
+	<CD id = "5">
+		<title>Homemade Dynamite</title>
+		<artist>Lorde</artist>
+		<country>New Zealand</country>
+		<genre>Alternative</genre>
+	</CD>
+	<CD id = "6">
+		<title>Make-up</title>
+		<artist>Hardkiss</artist>
+		<country>Ukraine</country>
+		<genre>Alternative</genre>
+	</CD>
+	<CD id = "7">
+		<title>Daft Punk</title>
+		<artist>Pentatonix</artist>
+		<country>USA</country>
+		<genre>Pop</genre>
+	</CD>
+	<CD id = "8">
+		<title>Overture</title>
+		<artist>AJR</artist>
+		<country>USA</country>
+		<genre>EDM</genre>
+	</CD>
+	<CD id = "9">
+		<title>The Monster</title>
+		<artist>Eminem (feat. Rihanna)</artist>
+		<country>USA</country>
+		<genre>Hip-Hop/Rap</genre>
+	</CD>
+	<CD id = "10">
+		<title>Eastside</title>
+		<artist>Benny Blanco and Halsey</artist>
+		<country>USA</country>
+		<genre>Pop</genre>
+	</CD>
+	<CD id = "11">
+		<title>Drag me down</title>
+		<artist>One direction</artist>
+		<country>UK</country>
+		<genre>Pop</genre>
+	</CD>
+</catalog>
